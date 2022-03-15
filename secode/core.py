@@ -35,8 +35,12 @@ def _encode(payload, encoder):
         for i, item in enumerate(payload['items']):
             payload['items'][i] = _encode(item, encoder)
     elif payload.get('kind') == 'Secret':
-        for key in payload['data']:
-            payload['data'][key] = encoder(payload['data'][key])
+        if payload.get('stringData'):
+            for key in payload.get('stringData'):
+                payload['stringData'][key] = encoder(payload['stringData'][key])
+        if payload.get('data'):
+            for key in payload.get('data'):
+                payload['data'][key] = encoder(payload['data'][key])
     else:
         raise ValueError('Invalid K8S Secret file format')
     return payload

@@ -1,6 +1,6 @@
 # Secode
 
-[![CircleCI](https://circleci.com/gh/crtomirmajer/secode/tree/master.svg?style=shield)](https://circleci.com/gh/crtomirmajer/secode/tree/master)
+Forked in order to get it work also on stringData Field.
 
 ## About
 **secode**, short for _secrets encode_, is a utility for `base64` encoding/decoding Kubernetes secrets.
@@ -14,7 +14,7 @@ Also works with multiple `Secret` definitions per file - `kind: List` or  `---` 
 
 Using `pip3`:
 
-`pip3 install git+http://github.com/crtomirmajer/secode.git`
+`pip3 install git+http://github.com/mloiseleur/secode.git`
 
 ## Usage
 
